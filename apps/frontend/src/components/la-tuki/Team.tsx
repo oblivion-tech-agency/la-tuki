@@ -9,21 +9,21 @@ const VIEWPORT = { once: true, amount: 0.1 as const };
 function MemberCard({ member, index }: { member: (typeof TEAM)[0]; index: number }) {
   return (
     <motion.div
-      className="flex flex-col items-center group"
+      className="flex flex-col items-center group w-32"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={VIEWPORT}
       transition={{ ...TRANSITION, delay: index * 0.05 }}
     >
-      <div className="w-32 h-32 rounded-full bg-zinc-900 border-4 border-primary/20 group-hover:border-primary mb-4 flex items-center justify-center transition-all duration-300">
+      <div className="w-32 h-32 rounded-full bg-zinc-900 border-4 border-primary/20 group-hover:border-primary mb-4 flex items-center justify-center transition-all duration-300 shrink-0">
         <span className="material-symbols-outlined text-5xl text-zinc-600 group-hover:text-primary transition-colors duration-300">
           person
         </span>
       </div>
-      <span className="font-black text-lg text-white uppercase group-hover:text-primary transition-colors">
+      <span className="font-black text-lg text-white uppercase group-hover:text-primary transition-colors text-center leading-tight">
         {member.name}
       </span>
-      <span className="text-xs text-zinc-500 font-bold uppercase tracking-widest mt-1 italic">
+      <span className="text-xs text-zinc-500 font-bold uppercase tracking-widest mt-1 italic text-center leading-snug">
         {member.role}
       </span>
     </motion.div>
