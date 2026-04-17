@@ -82,24 +82,17 @@ export const TWEETS = [
 ];
 
 export const TEAM = [
-  {
-    name: 'NICO',
-    role: 'Fundador / DJ',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDNNk77zRFc2UocSWBQ2nwDkVhPweEBIRfEjn-gUtvT6O80Q7T3QnYAd7C8wnSjt1ku0Tqn-1tA4b4PBpbVgyVjsKlotx2UijzuNZOajcCwNp_w9T4fp2292bM6peIf5ww8YidZd0a0eIFBS-WdvTMmnuoi5a9TjLKJA0xSs9q1ubPl1RBZrfbLBJtDC8Oz9E-HXd6BXAN5lZAKeqYxKwfjKiCiVk94YlLcwmwJ-GK7frpr-lhw5sTtkthkDxig_K8l7JlFcf9dCH3d',
-  },
-  {
-    name: 'JUANI',
-    role: 'Producer',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCHaprSogC7sRSaC1ek4yAm_UFGQfvq5zG7l12cLUoM9G0TkM72-1ZMeEespvlC2TSh-pqKXU7Dt8wFkdY7jLNbhGoY-1xZQZ4RhzBlVGjrWbc6bk1HoM9qxKdunS46mgnb3VGbzDoun9YMzJvsjG81lehv9ufe0D7sjBqcwCgRsFrICJlMJBipH_Kzyou24H-q-xDvh34HHAnIVPGwJHG5osD-fjN39oYvh3UufC_Ezknu5vq2j9dVoSYfdGeLb2Fq98JtyCM5pqwM',
-  },
-  {
-    name: 'MARI',
-    role: 'Marketing / PR',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDWeRjoxDjmyHBW5EWpwktZ5ldyD9AULJ_Q1IK35i7q_4DsNzCIZTHOkCylSrWdUagPFpdnN05We_pF3cXxR7euGtd6yjBlJTbMtc1DywnfKMF5h4_pqeeJKP8_6WdNmXlQzAXGfKChn7SslYR4kh6EcAxTIJ46I8D1DXkzPgj8eVSXuIF5Sa2kzRsz3A2yU8iJqVqwrhZEUlBkx_NrFyAMr4ZK_xJj7zPP-FojTrhhJfasLJ8gnUJbKKUOKmmT7pEE7pKw_LPuW7pc',
-  },
+  { name: 'NICO', role: 'Productor y logística' },
+  { name: 'TOMI', role: 'Productor y logística' },
+  { name: 'POLI', role: 'Productor y logística' },
+  { name: 'MARCHU', role: 'Directora de marketing' },
+  { name: 'JUANI', role: 'Productor creativo' },
+  { name: 'FEDU', role: 'Relaciones públicas' },
+  { name: 'JERO', role: 'Difusores' },
+  { name: 'FRAN', role: 'Diseño gráfico' },
+  { name: 'DAI', role: 'Creadora de contenido en TikTok' },
+  { name: 'CHICHE', role: 'Community manager' },
+  { name: 'JUANITA', role: 'Difusores' },
 ];
 
 export const FAQS = [
