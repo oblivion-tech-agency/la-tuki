@@ -104,6 +104,10 @@ The project defines specialized agent roles. Use the pattern: "As the [agent nam
 - **E2E Testing Agent**: Playwright tests, Page Object Model
 - **Code Review Agent**: Code quality, best practices, security
 
+## Assets pendientes
+
+- **Video hero (#1):** El archivo `LATUKI.mp4` es vertical (1080x1920). Se necesita versión widescreen (16:9) para el hero de desktop. Cuando lo tengan, copiarlo a `apps/frontend/public/videos/hero-bg.mp4`.
+
 ## Commit Convention
 
 Follow Conventional Commits:
