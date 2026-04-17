@@ -26,12 +26,12 @@ export function FAQ() {
         </div>
 
         {/* Términos y Condiciones — desplegable */}
-        <details className="group border-t border-white/10 pt-8 mt-8">
+        <details className="group border-t border-white/5 pt-6 mt-6">
           <summary className="flex justify-between items-center cursor-pointer list-none">
-            <span className="font-black text-xl text-white uppercase italic">
+            <span className="text-sm font-bold text-zinc-500 uppercase tracking-widest group-hover:text-zinc-300 transition-colors">
               Términos y Condiciones
             </span>
-            <span className="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">
+            <span className="material-symbols-outlined text-zinc-600 text-base group-open:rotate-180 group-hover:text-zinc-300 transition-all">
               expand_more
             </span>
           </summary>
