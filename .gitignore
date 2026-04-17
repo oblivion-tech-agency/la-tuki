@@ -49,3 +49,7 @@ Thumbs.db
 .turbo
 .cache
 .vercel
+
+# TypeScript build cache
+tsconfig.tsbuildinfo
+**/tsconfig.tsbuildinfo

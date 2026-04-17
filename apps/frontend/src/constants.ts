@@ -1,38 +1,59 @@
 export const TOUR_DATES = [
   {
-    id: 'ba',
-    date: 'Oct 24',
-    venue: 'Estadio Obras',
-    city: 'BUENOS AIRES',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBGnQEd9J6ShHutNJUvAqJc7170bsNhilSl69yfocP58scgrmLsttqt6kW3tvLey5LVLjzTP0sojiwZnlbwHmjClyuIhIItyi-L_psYm3ev50tVL4sJCXDYOE6LkfmtZuKv2H-ThT13kz53espBckKpLanR8URcbCWFFpEVXDqZMXZbl_ZSB3GWd6__Q8E8vxW6mfoktHvEPuaRq_RlU47WVoWNQshjcPMdOjafmeFgHLmKg-gjgVPso3HbTq2dP5c1RgeWsyLLSv5T',
-    soldOut: 85,
-    isMain: true,
+    id: 'tandil-0418',
+    date: '18/04',
+    venue: 'Glow',
+    city: 'TANDIL',
+    // Reemplazar con flyer real: https://drive.google.com/drive/folders/1GeLjhTIJ04P1j7uTTiK7A5J9vD7mNyFj
+    image: '/images/flyers/tandil-0418.jpg',
   },
   {
-    id: 'med',
-    date: 'Nov 12',
-    venue: 'Pabellón Blanco',
-    city: 'MEDELLÍN',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC4CiECtTqEAlbuC5nOna1beyjW8J4AedWV5MsatWbFFjyqNJbPTTLfHi7TlEe5toMT8Kx5eh99RR6fq_bhA8PRqn1GWt8ggZIK6AlsvoGMKJgpcZK3Mau-J8eWp0CIvBYDkO19KBQbakAw4N0I-CfQ6I160cOQgZieIVCo6TtrjX6eDLZVGgOD01MezrtNTBao7uxl6rbOhw9fW9nGE7Yol42_7Zyh0tkxwKi6B5mwnDyH46n4D69Odc2XvBb02qSj8djMnln-bjcP',
+    id: 'bahia-0424',
+    date: '24/04',
+    venue: 'La Barraca',
+    city: 'BAHÍA BLANCA',
+    // Reemplazar con flyer real: https://drive.google.com/drive/folders/1IPBfwHWfNN8trvOXRaeqdbolncbigpNC
+    image: '/images/flyers/bahia-0424.jpg',
   },
   {
-    id: 'stgo',
-    date: 'Dec 05',
-    venue: 'Club Hípico',
-    city: 'SANTIAGO',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC3pTB9vWyCQQ8rWpTmBMCTCBf1-G1u6wdsOdZwlC2YuK0tDEj6QaGURAIJUSnQHXV5xq07IX1GdDUVCYmaofnIYXfh3kYdf7eGi78rvAgR_FWgBoBt9Q-wIDAiRAVnJ_MjHJIDOsn7CjWHgdPgX10SlZQmaLECYfofBz3iOlCH9VIr2k4qEXFOU3arAxzhIoer7iKfRDYDMZfV_IKRb_fLTF4MwYmy2uTI58G5LKJRcw9BEsDXun1WzOfaGxFgAGbUaO20oCLskp1r',
+    id: 'neuquen-0425',
+    date: '25/04',
+    venue: 'Mood',
+    city: 'NEUQUÉN CAPITAL',
+    // Reemplazar con flyer real: https://drive.google.com/drive/folders/1N-ShChA-G2i7tF5zWE43xMgRvGXKsZwI
+    image: '/images/flyers/neuquen-0425.jpg',
   },
   {
-    id: 'mx',
-    date: 'Jan 15',
-    venue: 'Foro Sol',
-    city: 'MÉXICO DF',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCEehC1cLV2o06yPZgn43lYmbs3QmKEtiXW1yiOO6BlJZTRkjeQUVzs4CA087xFZ6DaKJUzMNLMu-Fho7-xLMUdLnmjc4tjZh-LQxPaoKcYjoJrduFxTCf4oP0mYLzB23N94Z8eczK0WlKNVsYC8Mzv8vnr4nq4F5c6lbR8srftR2EZvQclSXcjLORtYRvJ2cxXrk8TlLS68YI5wZomeKNZ2xlMFTy901EQVnpqgKH28iEjxwzwFK1Z14JuRERq1w5oxoTqo5lTkeJL',
-    isLast: true,
+    id: 'plottier-0509',
+    date: '09/05',
+    venue: 'Animal',
+    city: 'PLOTTIER, NEUQUÉN',
+    // Reemplazar con flyer real: https://drive.google.com/drive/folders/1Xv0hYRp66Lp-t8WLW9CEFYDb7pcW1Cne
+    image: '/images/flyers/plottier-0509.jpg',
+  },
+  {
+    id: 'cordoba-0509',
+    date: '09/05',
+    venue: 'Club Lúmina',
+    city: 'CÓRDOBA CAPITAL',
+    // Reemplazar con flyer real: https://drive.google.com/drive/folders/1Io5pb_xJZuYRx6O41wE1sIvZKbYQ__Vf
+    image: '/images/flyers/cordoba-0509.jpg',
+  },
+  {
+    id: 'viedma-0515',
+    date: '15/05',
+    venue: 'Aura',
+    city: 'VIEDMA',
+    // Reemplazar con flyer real: https://drive.google.com/drive/folders/1Lt2luIy4jxSfDwpTEsAPpL6eEoicSkQ0
+    image: '/images/flyers/viedma-0515.jpg',
+  },
+  {
+    id: 'laprida-0516',
+    date: '16/05',
+    venue: 'El Castillo',
+    city: 'LAPRIDA',
+    // Reemplazar con flyer real: https://drive.google.com/drive/folders/1OFqRaSlPoswp_wnviZflj7jzG7QtoNTe
+    image: '/images/flyers/laprida-0516.jpg',
   },
 ];
 
