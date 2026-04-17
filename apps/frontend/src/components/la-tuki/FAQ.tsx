@@ -6,7 +6,7 @@ export function FAQ() {
       <div className="max-w-3xl mx-auto">
         {/* FAQ */}
         <h2 className="text-6xl font-anton text-center text-white italic mb-16">F.A.Q.</h2>
-        <div className="space-y-6 mb-24">
+        <div className="space-y-6 mb-8">
           {FAQS.map((faq, i) => (
             <details
               key={i}
@@ -25,18 +25,24 @@ export function FAQ() {
           ))}
         </div>
 
-        {/* Términos y Condiciones */}
-        <div className="border-t border-white/10 pt-20">
-          <h2 className="text-5xl font-anton text-center text-white italic mb-12">
-            TÉRMINOS Y CONDICIONES
-          </h2>
-          <p className="text-zinc-400 font-bold text-lg leading-relaxed mb-12">
-            Cuando sacás tu entrada para La Tuki, ya sea comprando por la ticketera oficial o
-            ingresando con invitación/cortesía autorizada, entendemos que aceptás estas condiciones
-            básicas para que todos vivamos la noche como corresponde.
-          </p>
+        {/* Términos y Condiciones — desplegable */}
+        <details className="group border-t border-white/10 pt-8 mt-8">
+          <summary className="flex justify-between items-center cursor-pointer list-none">
+            <span className="font-black text-xl text-white uppercase italic">
+              Términos y Condiciones
+            </span>
+            <span className="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">
+              expand_more
+            </span>
+          </summary>
 
-          <div className="space-y-10">
+          <div className="mt-10 space-y-10">
+            <p className="text-zinc-400 font-bold text-lg leading-relaxed">
+              Cuando sacás tu entrada para La Tuki, ya sea comprando por la ticketera oficial o
+              ingresando con invitación/cortesía autorizada, entendemos que aceptás estas
+              condiciones básicas para que todos vivamos la noche como corresponde.
+            </p>
+
             <div>
               <h3 className="text-primary font-black text-sm uppercase tracking-widest mb-3 border-l-4 border-primary pl-4">
                 Entradas
@@ -79,7 +85,7 @@ export function FAQ() {
               </p>
             </div>
           </div>
-        </div>
+        </details>
       </div>
     </section>
   );
