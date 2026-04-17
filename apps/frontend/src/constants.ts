@@ -99,16 +99,16 @@ export const FAQS = [
   {
     question: '¿Edad mínima?',
     answer:
-      'Todos los eventos de La Tuki son estrictamente para mayores de 18 años. Se requiere DNI físico vigente para entrar. Sin DNI no hay perreo, che.',
+      'El ingreso respeta la edad mínima establecida según la normativa local y el venue de cada edición. Puede solicitarse DNI físico o Mi Argentina al ingresar.',
   },
   {
-    question: '¿Entradas y Devoluciones?',
+    question: '¿Entradas y devoluciones?',
     answer:
-      'Las entradas son nominales y digitales. Hay devoluciones habilitadas hasta 7 días antes de cada fecha. Pasado ese tiempo, podés revenderla por nuestro canal oficial de confianza.',
+      'Las entradas son válidas únicamente si fueron adquiridas a través de los canales oficiales comunicados por La Tuki en cada fecha. Si comprás entradas por reventa no autorizada, pueden ser rechazadas en el ingreso. En esos casos, la organización no puede hacerse responsable por duplicaciones, estafas o inconvenientes derivados de compras fuera de los medios oficiales. Nuestro consejo: usá siempre los links publicados en nuestras redes.',
   },
   {
-    question: '¿Reservas y VIP?',
+    question: '¿Se realizan devoluciones?',
     answer:
-      'Si bien somos de la calle, tenemos mesas VIP para los que quieren un poco más de aire. Se reservan directo a través de nuestro WhatsApp oficial (link en bio de IG).',
+      'No se realizan devoluciones en caso de inasistencia del comprador, errores al momento de la compra, confusión en la selección de fecha o ciudad, o cualquier motivo ajeno a la organización. En caso de reintegro, el mismo queda sujeto a lo que comuniquemos oficialmente por nuestras redes sociales.',
   },
 ];
