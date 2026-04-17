@@ -33,11 +33,14 @@ export function EventSection() {
             >
               {/* Flyer */}
               <img
-                className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 src={event.image}
                 alt={`${event.city} - ${event.date}`}
+                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              {/* Overlay oscuro que se levanta en hover para "revelar" el color del flyer */}
+              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/10 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
               {/* Info */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
