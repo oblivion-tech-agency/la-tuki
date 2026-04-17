@@ -19,12 +19,21 @@ export function Manifiesto() {
           <h2 className="text-7xl font-anton text-primary italic mb-12">EL MANIFIESTO</h2>
           <div className="space-y-8 text-2xl font-bold leading-tight text-zinc-300">
             <p>
-              Sentí la energía única de <span className="text-white">La Tuki</span>, donde la cumbia
-              y el reggaetón de la vieja escuela explotan como en los 2000.
+              <span className="text-white">La Tuki</span> es una experiencia inmersiva que conecta
+              generaciones a través del reggaetón y la cumbia old que todos sabemos cantar.
+              Promovemos el respeto, el consentimiento y el cuidado entre todos.
             </p>
             <p>
-              No somos solo una joda, somos una experiencia inmersiva. Desde los beats clásicos
-              hasta el ambiente más eléctrico que vas a vivir en Buenos Aires.
+              No es una moda: es un momento de conexión con ustedes y los recuerdos que se repiten
+              en cada ciudad donde aterrizamos.
+            </p>
+            <p>
+              Creamos noches con identidad propia, mucha energía y recuerdos que hacen revivir los
+              2000.
+            </p>
+            <p>
+              No es una fiesta más, es un momento que te enciende en cada fecha y se guarda para
+              siempre.
             </p>
           </div>
         </motion.div>
