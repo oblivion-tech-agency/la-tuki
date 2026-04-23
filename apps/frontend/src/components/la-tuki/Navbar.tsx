@@ -10,9 +10,12 @@ export function Navbar() {
           <span>/</span>
           <span className="hover:text-white cursor-pointer transition-colors">EN</span>
         </div>
-        <button className="bg-primary text-black px-6 py-2.5 rounded-full font-black text-xs hover:scale-105 transition-transform uppercase tracking-tighter">
+        <a
+          href="#fechas"
+          className="bg-primary text-black px-6 py-2.5 rounded-full font-black text-xs hover:scale-105 transition-transform uppercase tracking-tighter"
+        >
           CONSEGUÍ TUS ENTRADAS
-        </button>
+        </a>
       </div>
     </nav>
   );

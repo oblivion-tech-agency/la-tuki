@@ -8,8 +8,7 @@ const VIEWPORT = { once: true, amount: 0.25 as const };
 export function Manifiesto() {
   return (
     <section className="py-24 bg-zinc-950 text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        {/* Columna izquierda — entra desde la izquierda */}
+      <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -38,9 +37,9 @@ export function Manifiesto() {
           </div>
         </motion.div>
 
-        {/* Columna derecha — entra desde la derecha */}
+        {/* Testimonios del manifiesto — descomentar cuando tengamos los reales
         <motion.div
-          className="space-y-6"
+          className="space-y-6 mt-16"
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={VIEWPORT}
@@ -55,15 +54,15 @@ export function Manifiesto() {
               <div className="w-12 h-12 rounded-full bg-primary overflow-hidden shadow-[0_0_15px_rgba(166,214,0,0.5)]">
                 <img
                   className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWeRjoxDjmyHBW5EWpwktZ5ldyD9AULJ_Q1IK35i7q_4DsNzCIZTHOkCylSrWdUagPFpdnN05We_pF3cXxR7euGtd6yjBlJTbMtc1DywnfKMF5h4_pqeeJKP8_6WdNmXlQzAXGfKChn7SslYR4kh6EcAxTIJ46I8D1DXkzPgj8eVSXuIF5Sa2kzRsz3A2yU8iJqVqwrhZEUlBkx_NrFyAMr4ZK_xJj7zPP-FojTrhhJfasLJ8gnUJbKKUOKmmT7pEE7pKw_LPuW7pc"
+                  src="REEMPLAZAR_CON_FOTO_REAL"
                   referrerPolicy="no-referrer"
-                  alt="Sofía R."
+                  alt="Nombre"
                 />
               </div>
               <div>
-                <span className="font-black text-white block uppercase text-sm">Sofía R.</span>
+                <span className="font-black text-white block uppercase text-sm">Nombre Apellido</span>
                 <span className="text-primary text-xs font-bold tracking-widest uppercase">
-                  Influencer @sofi_perreo
+                  @handle — Descripción
                 </span>
               </div>
             </div>
@@ -76,14 +75,15 @@ export function Manifiesto() {
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-zinc-800 border-2 border-primary"></div>
               <div>
-                <span className="font-black text-white block uppercase text-sm">Elena G.</span>
+                <span className="font-black text-white block uppercase text-sm">Nombre Apellido</span>
                 <span className="text-primary text-xs font-bold tracking-widest uppercase">
-                  México DF Content Creator
+                  @handle — Descripción
                 </span>
               </div>
             </div>
           </div>
         </motion.div>
+        */}
       </div>
     </section>
   );

@@ -29,28 +29,56 @@ export function EventSection() {
           {TOUR_DATES.map((event) => (
             <div
               key={event.id}
-              className="group relative overflow-hidden bg-zinc-900 border border-white/10 hover:border-primary transition-all duration-300 aspect-[3/4]"
+              className={`group relative overflow-hidden bg-zinc-900 border transition-all duration-300 aspect-[3/4] ${event.past ? 'border-white/5' : 'border-white/10 hover:border-primary'}`}
             >
               {/* Flyer */}
               <img
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ${event.past ? 'grayscale brightness-50' : 'group-hover:scale-105'}`}
                 src={event.image}
                 alt={`${event.city} - ${event.date}`}
                 loading="lazy"
               />
-              {/* Overlay oscuro que se levanta en hover para "revelar" el color del flyer */}
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/10 transition-colors duration-500" />
+              <div
+                className={`absolute inset-0 transition-colors duration-500 ${event.past ? 'bg-black/40' : 'bg-black/50 group-hover:bg-black/10'}`}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+
+              {/* Badge agotado */}
+              {event.past && (
+                <div className="absolute top-4 left-4">
+                  <span className="bg-red-900/80 text-red-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 border border-red-800/60">
+                    AGOTADO
+                  </span>
+                </div>
+              )}
 
               {/* Info */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="text-primary text-xs font-black uppercase tracking-widest mb-1">
+                <p
+                  className={`text-xs font-black uppercase tracking-widest mb-1 ${event.past ? 'text-zinc-500' : 'text-primary'}`}
+                >
                   {event.date} · {event.venue}
                 </p>
-                <h3 className="text-2xl font-anton text-white mb-4 leading-tight">{event.city}</h3>
-                <button className="w-full py-3 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black text-xs uppercase hover:bg-primary hover:text-black transition-all duration-200">
-                  CONSEGUIR ENTRADAS
-                </button>
+                <h3
+                  className={`text-2xl font-anton mb-4 leading-tight ${event.past ? 'text-zinc-400' : 'text-white'}`}
+                >
+                  {event.city}
+                </h3>
+                {event.past ? (
+                  <button
+                    disabled
+                    className="w-full py-3 bg-red-950/40 text-red-500/60 border border-red-900/30 font-black text-xs uppercase cursor-not-allowed select-none"
+                  >
+                    AGOTADO
+                  </button>
+                ) : (
+                  <button
+                    disabled
+                    className="w-full py-3 bg-white/5 backdrop-blur-md text-zinc-500 border border-white/10 font-black text-xs uppercase cursor-not-allowed select-none"
+                  >
+                    PRÓXIMAMENTE
+                  </button>
+                )}
               </div>
             </div>
           ))}

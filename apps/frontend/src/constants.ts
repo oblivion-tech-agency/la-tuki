@@ -6,6 +6,7 @@ export const TOUR_DATES = [
     city: 'TANDIL',
     // Reemplazar con flyer real: https://drive.google.com/drive/folders/1GeLjhTIJ04P1j7uTTiK7A5J9vD7mNyFj
     image: '/images/flyers/tandil-0418.jpg',
+    past: true,
   },
   {
     id: 'bahia-0424',
@@ -82,18 +83,18 @@ export const TWEETS = [
 ];
 
 export const TEAM = [
-  { name: 'NICO', role: 'Productor y logística' },
-  { name: 'TOMI', role: 'Productor y logística' },
-  { name: 'POLI', role: 'Productor y logística' },
-  { name: 'MARCHU', role: 'Directora de marketing' },
-  { name: 'JUANI', role: 'Productor creativo' },
-  { name: 'FEDU', role: 'Relaciones públicas' },
-  { name: 'JERO', role: 'Difusores' },
-  { name: 'FRAN', role: 'Diseño gráfico' },
-  { name: 'DAI', role: 'Creadora de contenido en TikTok' },
-  { name: 'CHICHE', role: 'Community manager' },
-  { name: 'JUANITA', role: 'Difusores' },
-];
+  { name: 'NICO', role: 'Productor y logística', gender: 'm' },
+  { name: 'TOMI', role: 'Productor y logística', gender: 'm' },
+  { name: 'POLI', role: 'Productor y logística', gender: 'f' },
+  { name: 'MARCHU', role: 'Directora de marketing', gender: 'f' },
+  { name: 'JUANI', role: 'Productor creativo', gender: 'm' },
+  { name: 'FEDU', role: 'Relaciones públicas', gender: 'f' },
+  { name: 'JERO', role: 'Difusores', gender: 'm' },
+  { name: 'FRAN', role: 'Diseño gráfico', gender: 'm' },
+  { name: 'DAI', role: 'Creadora de contenido en TikTok', gender: 'f' },
+  { name: 'CHICHE', role: 'Community manager', gender: 'm' },
+  { name: 'JUANITA', role: 'Difusores', gender: 'f' },
+] as const;
 
 export const FAQS = [
   {
