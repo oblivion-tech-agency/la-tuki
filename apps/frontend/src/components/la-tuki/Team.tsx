@@ -6,7 +6,31 @@ import { TEAM } from '@/constants';
 const TRANSITION = { duration: 0.55, ease: 'easeOut' as const };
 const VIEWPORT = { once: true, amount: 0.1 as const };
 
-function MemberCard({ member, index }: { member: (typeof TEAM)[0]; index: number }) {
+const AVATAR_SEEDS: Record<string, string> = {
+  POLI: 'POLI-chica',
+};
+
+const HAIR_COLORS: Record<string, string> = {
+  FEDU: 'f5d76e', // rubia
+};
+
+// Pelo corto para hombres con seed ambiguo
+const SHORT_HAIR_GUYS = new Set(['TOMI']);
+
+function avatarUrl(name: string, gender: 'm' | 'f'): string {
+  const seed = encodeURIComponent(AVATAR_SEEDS[name] ?? name);
+
+  if (gender === 'f') {
+    const hairColor = HAIR_COLORS[name];
+    const colorParam = hairColor ? `&hairColor[]=${hairColor}` : '';
+    return `https://api.dicebear.com/9.x/lorelei/svg?seed=${seed}&radius=50${colorParam}`;
+  } else {
+    const hairParam = SHORT_HAIR_GUYS.has(name) ? '&hair[]=fonze&hair[]=pixie&hair[]=mrT' : '';
+    return `https://api.dicebear.com/9.x/micah/svg?seed=${seed}&radius=50${hairParam}`;
+  }
+}
+
+function MemberCard({ member, index }: { member: (typeof TEAM)[number]; index: number }) {
   return (
     <motion.div
       className="flex flex-col items-center group w-32"
@@ -15,10 +39,13 @@ function MemberCard({ member, index }: { member: (typeof TEAM)[0]; index: number
       viewport={VIEWPORT}
       transition={{ ...TRANSITION, delay: index * 0.05 }}
     >
-      <div className="w-32 h-32 rounded-full bg-zinc-900 border-4 border-primary/20 group-hover:border-primary mb-4 flex items-center justify-center transition-all duration-300 shrink-0">
-        <span className="material-symbols-outlined text-5xl text-zinc-600 group-hover:text-primary transition-colors duration-300">
-          person
-        </span>
+      <div className="w-32 h-32 rounded-full bg-zinc-900 border-4 border-primary/20 group-hover:border-primary mb-4 overflow-hidden transition-all duration-300 shrink-0">
+        <img
+          src={avatarUrl(member.name, member.gender as 'm' | 'f')}
+          alt={member.name}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
       </div>
       <span className="font-black text-lg text-white uppercase group-hover:text-primary transition-colors text-center leading-tight">
         {member.name}

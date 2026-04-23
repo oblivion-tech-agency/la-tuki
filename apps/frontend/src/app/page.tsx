@@ -17,7 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <EventSection />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Manifiesto />
         <Marquee />
         <Playlist />
