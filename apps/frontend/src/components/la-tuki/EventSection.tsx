@@ -71,6 +71,15 @@ export function EventSection() {
                   >
                     AGOTADO
                   </button>
+                ) : event.ticketUrl ? (
+                  <a
+                    href={event.ticketUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full py-3 bg-primary text-black border border-primary font-black text-xs uppercase text-center hover:bg-primary/90 transition-colors duration-200"
+                  >
+                    TICKETS
+                  </a>
                 ) : (
                   <button
                     disabled
