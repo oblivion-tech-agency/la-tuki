@@ -15,6 +15,7 @@ export const TOUR_DATES = [
     city: 'BAHÍA BLANCA',
     // Reemplazar con flyer real: https://drive.google.com/drive/folders/1IPBfwHWfNN8trvOXRaeqdbolncbigpNC
     image: '/images/flyers/bahia-0424.jpg',
+    past: true,
   },
   {
     id: 'neuquen-0425',
@@ -23,6 +24,7 @@ export const TOUR_DATES = [
     city: 'NEUQUÉN CAPITAL',
     // Reemplazar con flyer real: https://drive.google.com/drive/folders/1N-ShChA-G2i7tF5zWE43xMgRvGXKsZwI
     image: '/images/flyers/neuquen-0425.jpg',
+    past: true,
   },
   {
     id: 'plottier-0509',
@@ -31,6 +33,7 @@ export const TOUR_DATES = [
     city: 'PLOTTIER, NEUQUÉN',
     // Reemplazar con flyer real: https://drive.google.com/drive/folders/1Xv0hYRp66Lp-t8WLW9CEFYDb7pcW1Cne
     image: '/images/flyers/plottier-0509.jpg',
+    ticketUrl: 'https://centralticket.net/Plotier',
   },
   {
     id: 'cordoba-0509',
@@ -39,6 +42,7 @@ export const TOUR_DATES = [
     city: 'CÓRDOBA CAPITAL',
     // Reemplazar con flyer real: https://drive.google.com/drive/folders/1Io5pb_xJZuYRx6O41wE1sIvZKbYQ__Vf
     image: '/images/flyers/cordoba-0509.jpg',
+    ticketUrl: 'https://alpogo.com/evento/la-tuki-25707',
   },
   {
     id: 'viedma-0515',
@@ -47,6 +51,15 @@ export const TOUR_DATES = [
     city: 'VIEDMA',
     // Reemplazar con flyer real: https://drive.google.com/drive/folders/1Lt2luIy4jxSfDwpTEsAPpL6eEoicSkQ0
     image: '/images/flyers/viedma-0515.jpg',
+    ticketUrl: 'https://centralticket.net/Viedmatuki',
+  },
+  {
+    id: 'madryn-0516',
+    date: '16/05',
+    venue: 'Club Cero Uno',
+    city: 'PUERTO MADRYN, CHUBUT',
+    image: '/images/flyers/flyer-pto-madryn.png',
+    ticketUrl: 'https://centralticket.net/Tukiclubmadryn',
   },
   {
     id: 'laprida-0516',
@@ -55,6 +68,15 @@ export const TOUR_DATES = [
     city: 'LAPRIDA',
     // Reemplazar con flyer real: https://drive.google.com/drive/folders/1OFqRaSlPoswp_wnviZflj7jzG7QtoNTe
     image: '/images/flyers/laprida-0516.jpg',
+    ticketUrl: 'https://centralticket.net/Lapridatuki',
+  },
+  {
+    id: 'trelew-0523',
+    date: '23/05',
+    venue: 'Goat',
+    city: 'TRELEW',
+    image: '/images/flyers/trelew-flyer.png',
+    ticketUrl: 'https://centralticket.net/Trelewtuki',
   },
 ];
 
