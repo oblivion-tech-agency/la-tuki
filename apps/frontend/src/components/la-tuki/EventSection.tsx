@@ -1,6 +1,12 @@
+'use client';
+
+import { useLanguage } from '@/contexts/LanguageContext';
 import { TOUR_DATES } from '@/constants';
 
 export function EventSection() {
+  const { t } = useLanguage();
+  const ev = t.events;
+
   return (
     <section className="relative py-24 bg-black overflow-hidden" id="fechas">
       <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
@@ -11,16 +17,15 @@ export function EventSection() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
             <span className="text-primary font-black tracking-widest text-sm block mb-4 border-l-4 border-primary pl-4">
-              TOUR 2026
+              {ev.sectionTag}
             </span>
             <h2 className="text-7xl md:text-9xl font-anton text-white leading-[0.85] italic">
-              AGENDÁ ESTAS FECHAS
+              {ev.title}
             </h2>
           </div>
           <div className="hidden lg:block text-right">
-            <p className="text-zinc-500 font-bold uppercase tracking-widest text-sm">
-              Próximos paraderos de la <br />
-              caravana más grande del país
+            <p className="text-zinc-500 font-bold uppercase tracking-widest text-sm whitespace-pre-line">
+              {ev.subtitle}
             </p>
           </div>
         </div>
@@ -47,7 +52,7 @@ export function EventSection() {
               {event.past && (
                 <div className="absolute top-4 left-4">
                   <span className="bg-red-900/80 text-red-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 border border-red-800/60">
-                    AGOTADO
+                    {ev.soldOut}
                   </span>
                 </div>
               )}
@@ -69,7 +74,7 @@ export function EventSection() {
                     disabled
                     className="w-full py-3 bg-red-950/40 text-red-500/60 border border-red-900/30 font-black text-xs uppercase cursor-not-allowed select-none"
                   >
-                    AGOTADO
+                    {ev.soldOut}
                   </button>
                 ) : event.ticketUrl ? (
                   <a
@@ -78,14 +83,14 @@ export function EventSection() {
                     rel="noopener noreferrer"
                     className="block w-full py-3 bg-primary text-black border border-primary font-black text-xs uppercase text-center hover:bg-primary/90 transition-colors duration-200"
                   >
-                    TICKETS
+                    {ev.tickets}
                   </a>
                 ) : (
                   <button
                     disabled
                     className="w-full py-3 bg-white/5 backdrop-blur-md text-zinc-500 border border-white/10 font-black text-xs uppercase cursor-not-allowed select-none"
                   >
-                    PRÓXIMAMENTE
+                    {ev.comingSoon}
                   </button>
                 )}
               </div>

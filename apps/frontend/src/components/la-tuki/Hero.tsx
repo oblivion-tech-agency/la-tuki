@@ -1,13 +1,16 @@
 'use client';
 
 import { motion } from 'motion/react';
-
-const NAV_ITEMS = [
-  { label: 'FECHAS', href: '#fechas' },
-  { label: 'CONTACTO', href: '#contacto' },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export function Hero() {
+  const { t } = useLanguage();
+
+  const NAV_ITEMS = [
+    { label: t.nav.dates, href: '#fechas' },
+    { label: t.nav.contact, href: '#contacto' },
+  ];
+
   return (
     <header className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Video background — reemplazar src con el video real del Drive */}
@@ -41,7 +44,7 @@ export function Hero() {
         <nav className="flex items-center gap-10 border-t border-b border-white/20 py-3 px-8">
           {NAV_ITEMS.map(({ label, href }) => (
             <a
-              key={label}
+              key={href}
               href={href}
               className="text-white text-sm font-black tracking-widest uppercase hover:text-primary transition-colors duration-200"
             >
@@ -52,7 +55,7 @@ export function Hero() {
 
         {/* Tagline */}
         <p className="text-white text-lg md:text-xl font-black tracking-[0.25em] uppercase">
-          LO SIMPLE GARPA
+          {t.hero.tagline}
         </p>
       </motion.div>
     </header>

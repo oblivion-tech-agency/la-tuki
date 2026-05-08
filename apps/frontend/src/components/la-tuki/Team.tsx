@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { TEAM } from '@/constants';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const TRANSITION = { duration: 0.55, ease: 'easeOut' as const };
 const VIEWPORT = { once: true, amount: 0.1 as const };
@@ -62,6 +63,8 @@ const ROW_2 = TEAM.slice(3, 8); // Marchu, Juani, Fedu, Jero, Fran
 const ROW_3 = TEAM.slice(8, 11); // Dai, Chiche, Juanita
 
 export function Team() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center">
@@ -72,7 +75,7 @@ export function Team() {
           viewport={VIEWPORT}
           transition={TRANSITION}
         >
-          EL EQUIPO
+          {t.team.title}
         </motion.h2>
 
         <div className="flex flex-col gap-12">

@@ -36,15 +36,6 @@ export const TOUR_DATES = [
     ticketUrl: 'https://centralticket.net/Plotier',
   },
   {
-    id: 'cordoba-0509',
-    date: '09/05',
-    venue: 'Club Lúmina',
-    city: 'CÓRDOBA CAPITAL',
-    // Reemplazar con flyer real: https://drive.google.com/drive/folders/1Io5pb_xJZuYRx6O41wE1sIvZKbYQ__Vf
-    image: '/images/flyers/cordoba-0509.jpg',
-    ticketUrl: 'https://alpogo.com/evento/la-tuki-25707',
-  },
-  {
     id: 'viedma-0515',
     date: '15/05',
     venue: 'Aura',
