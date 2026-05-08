@@ -1,10 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 type FormState = 'idle' | 'loading' | 'success' | 'error';
 
 export function Contact() {
+  const { t } = useLanguage();
+  const c = t.contact;
+
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [mensaje, setMensaje] = useState('');
@@ -26,7 +30,7 @@ export function Contact() {
       const data = await res.json();
 
       if (!res.ok) {
-        setErrorMsg(data.error ?? 'Error al enviar el mensaje.');
+        setErrorMsg(data.error ?? c.defaultError);
         setState('error');
         return;
       }
@@ -36,7 +40,7 @@ export function Contact() {
       setEmail('');
       setMensaje('');
     } catch {
-      setErrorMsg('Error de conexión. Intentá de nuevo.');
+      setErrorMsg(c.connectionError);
       setState('error');
     }
   }
@@ -49,13 +53,10 @@ export function Contact() {
       {/* Columna izquierda */}
       <div>
         <h2 className="text-6xl md:text-8xl font-anton mb-8 italic text-white leading-[0.9] uppercase">
-          Contactá al equipo
+          {c.title}
         </h2>
-        <p className="text-zinc-400 text-xl font-bold mb-10 leading-relaxed">
-          Si querés llevar La Tuki a tu ciudad, sumar tu marca como sponsor o tenés alguna consulta,
-          escribinos.
-          <br />
-          Nos encanta crear cosas grandes en equipo.
+        <p className="text-zinc-400 text-xl font-bold mb-10 leading-relaxed whitespace-pre-line">
+          {c.subtitle}
         </p>
 
         <div className="space-y-6">
@@ -117,60 +118,60 @@ export function Contact() {
 
       {/* Formulario */}
       <div className="bg-card-dark p-10 border-2 border-primary/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-        <h3 className="text-3xl font-anton text-primary mb-8 italic">CONTACTÁ AL EQUIPO</h3>
+        <h3 className="text-3xl font-anton text-primary mb-8 italic">{c.formTitle}</h3>
 
         {state === 'success' ? (
           <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
             <span className="material-symbols-outlined text-primary text-6xl">check_circle</span>
             <p className="text-white font-black text-2xl uppercase tracking-tighter">
-              ¡Mensaje enviado!
+              {c.successTitle}
             </p>
-            <p className="text-zinc-400 font-bold">Nos ponemos en contacto a la brevedad.</p>
+            <p className="text-zinc-400 font-bold">{c.successText}</p>
             <button
               onClick={() => setState('idle')}
               className="mt-4 text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-primary transition-colors"
             >
-              Enviar otro mensaje
+              {c.sendAnother}
             </button>
           </div>
         ) : (
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label className="block text-xs font-black uppercase tracking-widest text-zinc-500 mb-2">
-                Nombre Completo
+                {c.nameLabel}
               </label>
               <input
                 required
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
                 className="w-full bg-black border-2 border-zinc-800 p-5 text-white focus:border-primary outline-none transition-all font-bold placeholder:text-zinc-700"
-                placeholder="ESCRIBÍ TU NOMBRE"
+                placeholder={c.namePlaceholder}
                 type="text"
               />
             </div>
             <div>
               <label className="block text-xs font-black uppercase tracking-widest text-zinc-500 mb-2">
-                Correo Electrónico
+                {c.emailLabel}
               </label>
               <input
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-black border-2 border-zinc-800 p-5 text-white focus:border-primary outline-none transition-all font-bold placeholder:text-zinc-700"
-                placeholder="TU@CORREO.COM"
+                placeholder={c.emailPlaceholder}
                 type="email"
               />
             </div>
             <div>
               <label className="block text-xs font-black uppercase tracking-widest text-zinc-500 mb-2">
-                Mensaje
+                {c.messageLabel}
               </label>
               <textarea
                 required
                 value={mensaje}
                 onChange={(e) => setMensaje(e.target.value)}
                 className="w-full bg-black border-2 border-zinc-800 p-5 text-white focus:border-primary outline-none transition-all font-bold placeholder:text-zinc-700"
-                placeholder="CONTANOS TODO..."
+                placeholder={c.messagePlaceholder}
                 rows={4}
               />
             </div>
@@ -184,7 +185,7 @@ export function Contact() {
               disabled={state === 'loading'}
               className="w-full bg-primary text-black font-black py-5 uppercase tracking-tighter text-xl hover:brightness-110 shadow-[0_10px_30px_rgba(166,214,0,0.2)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {state === 'loading' ? 'ENVIANDO...' : 'ENVIAR MENSAJE'}
+              {state === 'loading' ? c.sending : c.submit}
             </button>
           </form>
         )}

@@ -50,6 +50,9 @@ Thumbs.db
 .cache
 .vercel
 
+# Claude Code memory
+memory/
+
 # TypeScript build cache
 tsconfig.tsbuildinfo
 **/tsconfig.tsbuildinfo

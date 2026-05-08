@@ -1,35 +1,41 @@
-import { FAQS } from '@/constants';
+'use client';
+
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export function FAQ() {
+  const { t } = useLanguage();
+  const faq = t.faq;
+  const [ticketsSection, ageSection, refundSection] = faq.sections;
+
   return (
     <section className="py-24 px-6 bg-zinc-950 border-y border-white/10" id="faq">
       <div className="max-w-3xl mx-auto">
         {/* FAQ */}
-        <h2 className="text-6xl font-anton text-center text-white italic mb-16">F.A.Q.</h2>
+        <h2 className="text-6xl font-anton text-center text-white italic mb-16">{faq.title}</h2>
         <div className="space-y-6 mb-8">
-          {FAQS.map((faq, i) => (
+          {t.faqs.map((item, i) => (
             <details
               key={i}
               className="group p-8 bg-black border border-white/10 hover:border-primary/50 transition-all"
             >
               <summary className="flex justify-between items-center cursor-pointer font-black text-xl list-none text-white uppercase italic">
-                <span>{faq.question}</span>
+                <span>{item.question}</span>
                 <span className="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">
                   expand_more
                 </span>
               </summary>
               <div className="mt-6 text-zinc-400 font-bold text-lg leading-relaxed border-t border-white/5 pt-6">
-                {faq.answer}
+                {item.answer}
               </div>
             </details>
           ))}
         </div>
 
-        {/* Términos y Condiciones — desplegable */}
+        {/* Términos y Condiciones */}
         <details className="group border-t border-white/5 pt-6 mt-6">
           <summary className="flex justify-between items-center cursor-pointer list-none">
             <span className="text-sm font-bold text-zinc-500 uppercase tracking-widest group-hover:text-zinc-300 transition-colors">
-              Términos y Condiciones
+              {faq.termsTitle}
             </span>
             <span className="material-symbols-outlined text-zinc-600 text-base group-open:rotate-180 group-hover:text-zinc-300 transition-all">
               expand_more
@@ -37,52 +43,41 @@ export function FAQ() {
           </summary>
 
           <div className="mt-10 space-y-10">
-            <p className="text-zinc-400 font-bold text-lg leading-relaxed">
-              Cuando sacás tu entrada para La Tuki, ya sea comprando por la ticketera oficial o
-              ingresando con invitación/cortesía autorizada, entendemos que aceptás estas
-              condiciones básicas para que todos vivamos la noche como corresponde.
-            </p>
+            <p className="text-zinc-400 font-bold text-lg leading-relaxed">{faq.termsIntro}</p>
 
             <div>
               <h3 className="text-primary font-black text-sm uppercase tracking-widest mb-3 border-l-4 border-primary pl-4">
-                Entradas
+                {ticketsSection.title}
               </h3>
-              <p className="text-zinc-400 font-bold leading-relaxed">
-                Las entradas son válidas únicamente si fueron adquiridas a través de los canales
-                oficiales comunicados por La Tuki en cada fecha.
-              </p>
-              <p className="text-zinc-400 font-bold leading-relaxed mt-4">
-                Si comprás entradas por reventa no autorizada, pueden ser rechazadas en el ingreso.
-                En esos casos, la organización no puede hacerse responsable por duplicaciones,
-                estafas o inconvenientes derivados de compras fuera de los medios oficiales.
-              </p>
+              <p className="text-zinc-400 font-bold leading-relaxed">{ticketsSection.p1}</p>
+              <p className="text-zinc-400 font-bold leading-relaxed mt-4">{ticketsSection.p2}</p>
               <p className="text-zinc-500 font-bold leading-relaxed mt-4 italic">
-                Nuestro consejo: usá siempre los links publicados en nuestras redes.
+                {ticketsSection.p3}
               </p>
             </div>
 
             <div>
               <h3 className="text-primary font-black text-sm uppercase tracking-widest mb-3 border-l-4 border-primary pl-4">
-                Edad de ingreso
+                {ageSection.title}
               </h3>
-              <p className="text-zinc-400 font-bold leading-relaxed">
-                El ingreso respeta la edad mínima establecida según la normativa local y el venue de
-                cada edición. Puede solicitarse DNI físico o Mi Argentina al ingresar.
-              </p>
+              <p className="text-zinc-400 font-bold leading-relaxed">{ageSection.p1}</p>
             </div>
 
             <div>
               <h3 className="text-primary font-black text-sm uppercase tracking-widest mb-3 border-l-4 border-primary pl-4">
-                No se realizan devoluciones
+                {refundSection.title}
               </h3>
-              <p className="text-zinc-400 font-bold leading-relaxed">
-                En caso de inasistencia del comprador, errores al momento de la compra, confusión en
-                la selección de fecha o ciudad, o cualquier motivo ajeno a la organización.
-              </p>
-              <p className="text-zinc-400 font-bold leading-relaxed mt-4">
-                <span className="text-white">En caso de reintegro</span>, el mismo queda sujeto a lo
-                que comuniquemos oficialmente por nuestras redes sociales.
-              </p>
+              <p className="text-zinc-400 font-bold leading-relaxed">{refundSection.p1}</p>
+              {refundSection.p2 && (
+                <p className="text-zinc-400 font-bold leading-relaxed mt-4">
+                  {refundSection.p2Highlight && (
+                    <span className="text-white">{refundSection.p2Highlight}</span>
+                  )}
+                  {refundSection.p2Highlight
+                    ? refundSection.p2.replace(refundSection.p2Highlight, '')
+                    : refundSection.p2}
+                </p>
+              )}
             </div>
           </div>
         </details>
