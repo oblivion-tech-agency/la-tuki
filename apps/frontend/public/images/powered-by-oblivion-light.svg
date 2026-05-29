@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 36" width="160" height="36" role="img" aria-label="Powered by Oblivion Tech">
+  <text
+    x="80" y="10"
+    font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif"
+    font-size="7"
+    font-weight="700"
+    letter-spacing="3"
+    text-anchor="middle"
+    fill="rgba(255,255,255,0.60)">POWERED BY</text>
+  <image href="/images/oblivion-logo.svg" x="0" y="12" width="160" height="22"/>
+</svg>
