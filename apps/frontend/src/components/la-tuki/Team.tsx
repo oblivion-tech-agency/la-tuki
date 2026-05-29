@@ -12,11 +12,22 @@ const AVATAR_SEEDS: Record<string, string> = {
 };
 
 const HAIR_COLORS: Record<string, string> = {
-  FEDU: 'f5d76e', // rubia
+  FEDU: 'f5d76e',
 };
 
-// Pelo corto para hombres con seed ambiguo
-const SHORT_HAIR_GUYS = new Set(['TOMI']);
+// Overrides de boca por nombre (micah style)
+const MOUTH_OVERRIDES: Record<string, string> = {
+  NICO: 'smile',
+  JUANI: 'laughing',
+};
+
+// Overrides de pelo por nombre (micah style) — reemplaza la lógica genérica
+const HAIR_OVERRIDES: Record<string, string> = {
+  TOMI: '&hair[]=fonze&hair[]=mrT',
+};
+
+// Barba/facial hair para parecer más varón
+const FACIAL_HAIR = new Set(['TOMI']);
 
 function avatarUrl(name: string, gender: 'm' | 'f'): string {
   const seed = encodeURIComponent(AVATAR_SEEDS[name] ?? name);
@@ -26,8 +37,10 @@ function avatarUrl(name: string, gender: 'm' | 'f'): string {
     const colorParam = hairColor ? `&hairColor[]=${hairColor}` : '';
     return `https://api.dicebear.com/9.x/lorelei/svg?seed=${seed}&radius=50${colorParam}`;
   } else {
-    const hairParam = SHORT_HAIR_GUYS.has(name) ? '&hair[]=fonze&hair[]=pixie&hair[]=mrT' : '';
-    return `https://api.dicebear.com/9.x/micah/svg?seed=${seed}&radius=50${hairParam}`;
+    const hairParam = HAIR_OVERRIDES[name] ?? '';
+    const mouthParam = MOUTH_OVERRIDES[name] ? `&mouth[]=${MOUTH_OVERRIDES[name]}` : '';
+    const facialHairParam = FACIAL_HAIR.has(name) ? '&facialHair[]=beard&facialHair[]=scruff' : '';
+    return `https://api.dicebear.com/9.x/micah/svg?seed=${seed}&radius=50&baseColor[]=f8d5c2${hairParam}${mouthParam}${facialHairParam}`;
   }
 }
 

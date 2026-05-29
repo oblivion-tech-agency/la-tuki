@@ -34,6 +34,9 @@ export interface Translations {
     soldOut: string;
     tickets: string;
     comingSoon: string;
+    planningDates: string;
+    showMore: string;
+    showLess: string;
   };
   manifesto: {
     title: string;
@@ -95,6 +98,9 @@ export const translations: Record<Lang, Translations> = {
       soldOut: 'AGOTADO',
       tickets: 'TICKETS',
       comingSoon: 'PRÓXIMAMENTE',
+      planningDates: 'Planificando nuevas fechas...',
+      showMore: 'VER MÁS FECHAS',
+      showLess: 'VER MENOS',
     },
     manifesto: {
       title: 'EL MANIFIESTO',
@@ -195,6 +201,9 @@ export const translations: Record<Lang, Translations> = {
       soldOut: 'SOLD OUT',
       tickets: 'TICKETS',
       comingSoon: 'COMING SOON',
+      planningDates: 'Planning new dates...',
+      showMore: 'SEE MORE DATES',
+      showLess: 'SEE LESS',
     },
     manifesto: {
       title: 'THE MANIFESTO',

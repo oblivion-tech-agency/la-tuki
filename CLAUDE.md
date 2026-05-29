@@ -104,6 +104,84 @@ The project defines specialized agent roles. Use the pattern: "As the [agent nam
 - **E2E Testing Agent**: Playwright tests, Page Object Model
 - **Code Review Agent**: Code quality, best practices, security
 
+## Sección de Fechas (Tour Dates)
+
+### Archivos clave
+
+- **Datos**: `apps/frontend/src/constants.ts` → array `TOUR_DATES`
+- **Componente**: `apps/frontend/src/components/la-tuki/EventSection.tsx`
+- **Traducciones**: `apps/frontend/src/lib/translations.ts` → clave `events`
+- **Flyers**: `apps/frontend/public/images/flyers/` — solo formato `.webp`
+
+### Estructura de cada evento
+
+```typescript
+{
+  id: 'ciudad-MMDD',        // ej: 'roca-0606'
+  date: 'DD/MM',            // para mostrar en pantalla
+  fullDate: 'YYYY-MM-DD',   // para lógica automática de fechas
+  venue: 'Nombre del lugar',
+  city: 'CIUDAD, PROVINCIA',
+  image: '/images/flyers/nombre-del-archivo.webp',
+  ticketUrl: 'https://...',  // omitir si aún no hay link
+}
+```
+
+### Lógica automática de visualización
+
+El componente calcula todo en base a la fecha actual — **no usar `past: true` manual**:
+
+1. Si el mes actual tiene fechas que aún no pasaron → se muestra el mes actual (pasados como AGOTADO)
+2. Si todas las fechas del mes actual ya pasaron y hay un mes futuro publicado → se muestra el mes futuro
+3. Si no hay fechas próximas en ningún mes → se muestra "Planificando nuevas fechas..."
+4. Se muestran 8 fechas por defecto; las restantes aparecen con "VER MÁS FECHAS"
+
+### Workflow para agregar nuevas fechas
+
+**1. Agregar el evento en `constants.ts`**
+
+- Usar `fullDate` en formato ISO (`YYYY-MM-DD`)
+- No agregar `past: true` (se calcula automáticamente)
+- Si el venue está vacío, dejar `venue: ''` (el separador `·` no aparece)
+
+**2. Preparar los flyers**
+Los flyers que entrega el diseñador suelen ser PNG de alta resolución (4000px+, varios MB).
+Antes de subirlos al proyecto, siempre redimensionar y convertir a WebP:
+
+```bash
+# Redimensionar a 700px de ancho y convertir a WebP (calidad 82)
+magick flyer-original.png -resize 700x -quality 82 nombre-destino.webp
+```
+
+Para procesar varios de una vez:
+
+```bash
+for f in *.png; do
+  magick "$f" -resize 700x -quality 82 "${f%.png}.webp"
+done
+```
+
+Resultado esperado: de ~5–12 MB PNG a ~50–120 KB WebP a 700×1244px.
+
+**3. Copiar el `.webp` a la carpeta de flyers**
+
+```
+apps/frontend/public/images/flyers/
+```
+
+Convención de nombres: `ciudad-MMDD.webp` (ej: `roca-0606.webp`)
+
+**4. Nunca dejar archivos PNG en la carpeta de flyers**
+Solo `.webp` y `.jpg`. Los PNG sin comprimir rompen la performance de la sección.
+
+**5. Verificar**
+
+```bash
+pnpm --filter frontend typecheck
+```
+
+---
+
 ## Assets pendientes
 
 - **Video hero (#1):** El archivo `LATUKI.mp4` es vertical (1080x1920). Se necesita versión widescreen (16:9) para el hero de desktop. Cuando lo tengan, copiarlo a `apps/frontend/public/videos/hero-bg.mp4`.
