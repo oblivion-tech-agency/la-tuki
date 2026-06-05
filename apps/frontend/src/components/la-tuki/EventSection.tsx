@@ -149,6 +149,15 @@ export function EventSection() {
                           href={event.ticketUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => {
+                            if (typeof window !== 'undefined' && (window as any).gtag) {
+                              (window as any).gtag('event', 'ticket_click', {
+                                event_category: 'tickets',
+                                event_label: `${event.city} – ${event.date}`,
+                                event_id: event.id,
+                              });
+                            }
+                          }}
                           className="block w-full py-3 bg-primary text-black border border-primary font-black text-xs uppercase text-center hover:bg-primary/90 transition-colors duration-200"
                         >
                           {ev.tickets}
