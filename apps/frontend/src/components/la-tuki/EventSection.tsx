@@ -13,54 +13,29 @@ function isPastEvent(fullDate: string): boolean {
   return new Date(fullDate + 'T00:00:00') < today;
 }
 
-// Devuelve el mes que debe mostrarse:
-// - Si el mes actual tiene algún evento cuya fecha aún no pasó → mes actual.
-// - Si no quedan eventos próximos en el mes actual → el mes futuro más cercano con eventos.
-// - Si no hay nada → mes actual (resultará en lista vacía → "Planificando...").
-function getDisplayMonth(): { year: number; month: number } {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const currentYear = today.getFullYear();
-  const currentMonth = today.getMonth();
-
-  const hasUpcomingThisMonth = TOUR_DATES.some((event) => {
-    const d = new Date(event.fullDate + 'T00:00:00');
-    return d.getFullYear() === currentYear && d.getMonth() === currentMonth && d >= today;
-  });
-
-  if (hasUpcomingThisMonth) {
-    return { year: currentYear, month: currentMonth };
-  }
-
-  // Buscar el mes futuro más próximo con al menos un evento
-  let minYear = Infinity;
-  let minMonth = Infinity;
-
-  for (const event of TOUR_DATES) {
-    const d = new Date(event.fullDate + 'T00:00:00');
-    const y = d.getFullYear();
-    const m = d.getMonth();
-    if (y < currentYear || (y === currentYear && m <= currentMonth)) continue;
-    if (y < minYear || (y === minYear && m < minMonth)) {
-      minYear = y;
-      minMonth = m;
-    }
-  }
-
-  // Sin eventos próximos en ningún mes → lista vacía → "Planificando..."
-  return minYear === Infinity ? { year: -1, month: -1 } : { year: minYear, month: minMonth };
-}
-
 export function EventSection() {
   const { t } = useLanguage();
   const ev = t.events;
   const [showAll, setShowAll] = useState(false);
 
-  const { year: displayYear, month: displayMonth } = getDisplayMonth();
-  const allEvents = TOUR_DATES.filter((event) => {
-    const d = new Date(event.fullDate + 'T00:00:00');
-    return d.getFullYear() === displayYear && d.getMonth() === displayMonth;
-  });
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+
+  // Muestra el mes actual (pasados como AGOTADO) + todos los meses futuros,
+  // siempre que exista al menos un evento próximo. Si no hay ninguno → "Planificando...".
+  const hasAnyUpcoming = TOUR_DATES.some((e) => new Date(e.fullDate + 'T00:00:00') >= today);
+
+  const allEvents = hasAnyUpcoming
+    ? TOUR_DATES.filter((event) => {
+        const d = new Date(event.fullDate + 'T00:00:00');
+        return (
+          d.getFullYear() > currentYear ||
+          (d.getFullYear() === currentYear && d.getMonth() >= currentMonth)
+        );
+      })
+    : [];
   const visibleEvents = showAll ? allEvents : allEvents.slice(0, INITIAL_VISIBLE);
   const hasMore = allEvents.length > INITIAL_VISIBLE;
 
