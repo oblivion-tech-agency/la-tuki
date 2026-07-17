@@ -104,7 +104,7 @@ export const TOUR_DATES = [
     fullDate: '2026-07-18',
     venue: 'Clúb Cero Uno',
     city: 'PUERTO MADRYN, CHUBUT',
-    image: '/images/flyers/madryn-1807-logo.webp',
+    image: '/images/flyers/madryn-1807.webp',
     ticketUrl: 'https://centralticket.net/Madryntuki',
   },
   {
