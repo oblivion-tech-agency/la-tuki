@@ -143,6 +143,24 @@ export const TOUR_DATES = [
     image: '/images/flyers/palermo-8-08.webp',
     ticketUrl: 'https://passify.link/invitacion/1358Q0BN6M',
   },
+  {
+    id: 'neuquen-0815',
+    date: '15/08',
+    fullDate: '2026-08-15',
+    venue: 'Otto',
+    city: 'NEUQUÉN, NEUQUÉN',
+    image: '/images/flyers/neuquen-0815.webp',
+    ticketUrl: 'https://centralticket.net/Tukixotto',
+  },
+  {
+    id: 'plaza-huincul-0815',
+    date: '15/08',
+    fullDate: '2026-08-15',
+    venue: 'Punto Blanco',
+    city: 'PLAZA HUINCUL, NEUQUÉN',
+    image: '/images/flyers/plaza-huincul-0815.webp',
+    ticketUrl: 'https://centralticket.net/Plazaxtuki',
+  },
 ];
 
 export const TWEETS = [
