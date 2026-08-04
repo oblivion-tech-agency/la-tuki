@@ -141,7 +141,7 @@ export const TOUR_DATES = [
     venue: 'Laundry Club',
     city: 'PALERMO, CABA',
     image: '/images/flyers/palermo-8-08.webp',
-    ticketUrl: 'https://passify.link/invitacion/1358Q0BN6M',
+    ticketUrl: 'https://passify.link/invitacion/1358FEJAHS?noref=1',
   },
   {
     id: 'neuquen-0815',
