@@ -76,7 +76,7 @@ export function EventSection() {
                 return (
                   <div
                     key={event.id}
-                    className={`group relative overflow-hidden bg-zinc-900 border transition-colors duration-300 aspect-[3/4] will-change-transform ${past ? 'border-white/5' : 'border-white/10 hover:border-primary'}`}
+                    className={`group relative overflow-hidden bg-zinc-900 border transition-colors duration-300 aspect-[9/16] will-change-transform ${past ? 'border-white/5' : 'border-white/10 hover:border-primary'}`}
                   >
                     {/* Flyer */}
                     <img
