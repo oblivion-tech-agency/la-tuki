@@ -224,6 +224,42 @@ export const TOUR_DATES = [
     image: '/images/flyers/monte-0905.webp',
     ticketUrl: 'https://centralticket.net/event/Tukixelfaro',
   },
+  {
+    id: 'pringles-0912',
+    date: '12/09',
+    fullDate: '2026-09-12',
+    venue: 'Área 42',
+    city: 'CORONEL PRINGLES, BUENOS AIRES',
+    image: '/images/flyers/pringles-0912.webp',
+    ticketUrl: 'https://centralticket.net/event/Tukixpringles',
+  },
+  {
+    id: 'roca-0912',
+    date: '12/09',
+    fullDate: '2026-09-12',
+    venue: 'Aquelarre',
+    city: 'GENERAL ROCA, RÍO NEGRO',
+    image: '/images/flyers/roca-0912.webp',
+    ticketUrl: 'https://centralticket.net/event/Rocaxseptiembre',
+  },
+  {
+    id: 'riocolorado-0912',
+    date: '12/09',
+    fullDate: '2026-09-12',
+    venue: 'Lumen',
+    city: 'RÍO COLORADO, RÍO NEGRO',
+    image: '/images/flyers/riocolorado-0912.webp',
+    ticketUrl: 'https://centralticket.net/event/Lumenxtuki',
+  },
+  {
+    id: 'rosario-0918',
+    date: '18/09',
+    fullDate: '2026-09-18',
+    venue: 'Jaguar Haüs',
+    city: 'ROSARIO, SANTA FE',
+    image: '/images/flyers/rosario-0918.webp',
+    ticketUrl: 'https://centralticket.net/event/Jaguarxtuki',
+  },
 ];
 
 export const TWEETS = [
