@@ -20,21 +20,20 @@ export function EventSection() {
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  const currentYear = today.getFullYear();
-  const currentMonth = today.getMonth();
 
-  // Muestra el mes actual (pasados como AGOTADO) + todos los meses futuros,
-  // siempre que exista al menos un evento próximo. Si no hay ninguno → "Planificando...".
+  const PAST_TOLERANCE_DAYS = 14;
+  const cutoffDate = new Date(today);
+  cutoffDate.setDate(cutoffDate.getDate() - PAST_TOLERANCE_DAYS);
+
+  // Muestra fechas próximas + agotadas de los últimos 14 días (para no cortar
+  // de golpe una fecha recién pasada), con las próximas siempre primero.
+  // Si no hay ninguna próxima → "Planificando...".
   const hasAnyUpcoming = TOUR_DATES.some((e) => new Date(e.fullDate + 'T00:00:00') >= today);
 
   const allEvents = hasAnyUpcoming
-    ? TOUR_DATES.filter((event) => {
-        const d = new Date(event.fullDate + 'T00:00:00');
-        return (
-          d.getFullYear() > currentYear ||
-          (d.getFullYear() === currentYear && d.getMonth() >= currentMonth)
-        );
-      })
+    ? TOUR_DATES.filter((event) => new Date(event.fullDate + 'T00:00:00') >= cutoffDate).sort(
+        (a, b) => Number(isPastEvent(a.fullDate)) - Number(isPastEvent(b.fullDate))
+      )
     : [];
   const visibleEvents = showAll ? allEvents : allEvents.slice(0, INITIAL_VISIBLE);
   const hasMore = allEvents.length > INITIAL_VISIBLE;
