@@ -429,6 +429,8 @@ Future enhancements:
 
 Built with modern web technologies and best practices for rapid full-stack development.
 
+<!-- deploy check: 2026-08-31 -->
+
 ---
 
 Made with ❤️ for developers
