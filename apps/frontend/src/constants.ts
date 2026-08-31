@@ -260,6 +260,33 @@ export const TOUR_DATES = [
     image: '/images/flyers/rosario-0918.webp',
     ticketUrl: 'https://centralticket.net/event/Jaguarxtuki',
   },
+  {
+    id: 'choele-0919',
+    date: '19/09',
+    fullDate: '2026-09-19',
+    venue: 'One Night Clúb',
+    city: 'CHOELE CHOEL, RÍO NEGRO',
+    image: '/images/flyers/choele-0919.webp',
+    ticketUrl: 'https://centralticket.net/event/Tukixchoele',
+  },
+  {
+    id: 'sanluis-0926',
+    date: '26/09',
+    fullDate: '2026-09-26',
+    venue: 'Comuna Club',
+    city: 'SAN LUIS, SAN LUIS',
+    image: '/images/flyers/sanluis-0926.webp',
+    ticketUrl: 'https://centralticket.net/Sanluis',
+  },
+  {
+    id: 'suarez-0926',
+    date: '26/09',
+    fullDate: '2026-09-26',
+    venue: 'Eclipse',
+    city: 'CORONEL SUÁREZ, BUENOS AIRES',
+    image: '/images/flyers/suarez-0926.webp',
+    ticketUrl: 'https://centralticket.net/Ecplipsextuki',
+  },
 ];
 
 export const TWEETS = [
