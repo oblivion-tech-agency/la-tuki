@@ -287,6 +287,33 @@ export const TOUR_DATES = [
     image: '/images/flyers/suarez-0926.webp',
     ticketUrl: 'https://centralticket.net/Ecplipsextuki',
   },
+  {
+    id: 'regina-1003',
+    date: '03/10',
+    fullDate: '2026-10-03',
+    venue: 'Complejo Kaulum',
+    city: 'VILLA REGINA, RÍO NEGRO',
+    image: '/images/flyers/regina-1003.webp',
+    ticketUrl: 'https://centralticket.net/Reginaxtuki',
+  },
+  {
+    id: 'rincon-1010',
+    date: '10/10',
+    fullDate: '2026-10-10',
+    venue: 'Clúb Berlín',
+    city: 'RINCÓN DE LOS SAUCES, NEUQUÉN',
+    image: '/images/flyers/rincon-1010.webp',
+    ticketUrl: 'https://centralticket.net/event/10566',
+  },
+  {
+    id: 'sanrafael-1010',
+    date: '10/10',
+    fullDate: '2026-10-10',
+    venue: 'Equis Society',
+    city: 'SAN RAFAEL, MENDOZA',
+    image: '/images/flyers/sanrafael-1010.webp',
+    ticketUrl: 'https://centralticket.net/event/10565',
+  },
 ];
 
 export const TWEETS = [
