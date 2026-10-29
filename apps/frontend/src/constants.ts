@@ -314,6 +314,16 @@ export const TOUR_DATES = [
     image: '/images/flyers/sanrafael-1010.webp',
     ticketUrl: 'https://centralticket.net/event/10565',
   },
+  {
+    id: 'tandil-1122',
+    date: '22/11',
+    fullDate: '2026-11-22',
+    venue: 'Malva',
+    city: 'TANDIL, BUENOS AIRES',
+    image: '/images/flyers/tandil-1122.webp',
+    ticketUrl:
+      'https://centralticket.net/Malvaxtuki?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-10',
+  },
 ];
 
 export const TWEETS = [
