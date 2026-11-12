@@ -315,6 +315,16 @@ export const TOUR_DATES = [
     ticketUrl: 'https://centralticket.net/event/10565',
   },
   {
+    id: 'roca-1121',
+    date: '21/11',
+    fullDate: '2026-11-21',
+    venue: 'Aquelarre',
+    city: 'GENERAL ROCA, RÍO NEGRO',
+    image: '/images/flyers/roca-1121.webp',
+    ticketUrl:
+      'https://centralticket.net/Rocaxtuki?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-10',
+  },
+  {
     id: 'tandil-1122',
     date: '22/11',
     fullDate: '2026-11-22',
@@ -323,6 +333,76 @@ export const TOUR_DATES = [
     image: '/images/flyers/tandil-1122.webp',
     ticketUrl:
       'https://centralticket.net/Malvaxtuki?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-10',
+  },
+  {
+    id: 'lamadrid-1128',
+    date: '28/11',
+    fullDate: '2026-11-28',
+    venue: 'Garden Point',
+    city: 'GENERAL LA MADRID, BUENOS AIRES',
+    image: '/images/flyers/lamadrid-1128.webp',
+    ticketUrl:
+      'https://centralticket.net/11224?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-11',
+  },
+  {
+    id: 'catriel-1128',
+    date: '28/11',
+    fullDate: '2026-11-28',
+    venue: 'Santa’s Club',
+    city: 'CATRIEL, RÍO NEGRO',
+    image: '/images/flyers/catriel-1128.webp',
+    ticketUrl:
+      'https://centralticket.net/11223?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-11',
+  },
+  {
+    id: 'villa-la-angostura-1128',
+    date: '28/11',
+    fullDate: '2026-11-28',
+    venue: 'Misa Night Club',
+    city: 'VILLA LA ANGOSTURA, NEUQUÉN',
+    image: '/images/flyers/villa-la-angostura-1128.webp',
+    ticketUrl:
+      'https://centralticket.net/11222?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-11',
+  },
+  {
+    id: 'choele-1205',
+    date: '05/12',
+    fullDate: '2026-12-05',
+    venue: 'One Night Club',
+    city: 'CHOELE CHOEL, RÍO NEGRO',
+    image: '/images/flyers/choele-1205.webp',
+    ticketUrl:
+      'https://centralticket.net/11282?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-11',
+  },
+  {
+    id: 'junin-de-los-andes-1205',
+    date: '05/12',
+    fullDate: '2026-12-05',
+    venue: 'La Morocha Disco',
+    city: 'JUNÍN DE LOS ANDES, NEUQUÉN',
+    image: '/images/flyers/junin-de-los-andes-1205.webp',
+    ticketUrl:
+      'https://centralticket.net/11281?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-11',
+  },
+  {
+    id: 'rio-colorado-1205',
+    date: '05/12',
+    fullDate: '2026-12-05',
+    venue: 'Lumen',
+    city: 'RÍO COLORADO, RÍO NEGRO',
+    image: '/images/flyers/rio-colorado-1205.webp',
+    ticketUrl:
+      'https://centralticket.net/11271?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-11',
+  },
+  {
+    id: 'neuquen-1219',
+    date: '19/12',
+    fullDate: '2026-12-19',
+    venue: 'Moodnight',
+    city: 'NEUQUÉN CAPITAL, NEUQUÉN',
+    image: '/images/flyers/neuquen-1219.webp',
+    ticketUrl:
+      'https://centralticket.net/11273?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-11',
   },
 ];
 
