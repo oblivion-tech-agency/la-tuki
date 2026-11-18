@@ -395,6 +395,26 @@ export const TOUR_DATES = [
       'https://centralticket.net/11271?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-11',
   },
   {
+    id: 'longchamps-1211',
+    date: '11/12',
+    fullDate: '2026-12-11',
+    venue: 'Upbeer',
+    city: 'LONGCHAMPS, BUENOS AIRES',
+    image: '/images/flyers/longchamps-1211.webp',
+    ticketUrl:
+      'https://centralticket.net/11340?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-11',
+  },
+  {
+    id: 'general-alvear-1212',
+    date: '12/12',
+    fullDate: '2026-12-12',
+    venue: 'Vamos Club',
+    city: 'GENERAL ALVEAR, BUENOS AIRES',
+    image: '/images/flyers/general-alvear-1212.webp',
+    ticketUrl:
+      'https://centralticket.net/11339?utm_source=productora&utm_medium=affiliate&utm_campaign=venta-1253-2026-11',
+  },
+  {
     id: 'neuquen-1219',
     date: '19/12',
     fullDate: '2026-12-19',
